@@ -5,6 +5,9 @@ class Node():
         self.left = None
         self.right = None
 
+    def __repr__(self) -> str:
+        return self.val
+
 # Some nodes examples to work with
 a = Node('a')
 b = Node('b')
@@ -20,21 +23,35 @@ b.left = d
 b.right = e
 c.right = f
 
-def treeIncludes(root, target):
+# def treeIncludesIterative(root, target):
+#     if root == None:
+#         return False
+#     queue = [root]
+
+#     while (len(queue) > 0):
+#         current = queue.pop(0)
+#         if current.val == target:
+#             return True
+#         if current.left:
+#             queue.append(current.left)
+#         if current.right:
+#             queue.append(current.right)
+#     return False
+
+# print(treeIncludesIterative(a,'e'))
+# print(treeIncludesIterative(a,'j'))
+
+def treeIncludesRecurrsive(root, target):
     if root == None:
         return False
-    queue = [root]
-
-    while (len(queue) > 0):
-        current = queue.pop(0)
-        if current.val == target:
-            return True
-        if current.left:
-            queue.append(current.left)
-        if current.right:
-            queue.append(current.right)
-    return False
-
-print(treeIncludes(a,'e'))
-print(treeIncludes(a,'j'))
     
+    if root.val == target:
+        return True
+
+    leftCheck = treeIncludesRecurrsive(root.left, target)
+    rightCheck = treeIncludesRecurrsive(root.right, target)
+
+    return leftCheck or rightCheck
+
+print(treeIncludesRecurrsive(a,'e'))
+print(treeIncludesRecurrsive(a,'j'))
