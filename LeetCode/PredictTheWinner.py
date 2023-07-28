@@ -11,32 +11,37 @@ Return true if Player 1 can win the game. If the scores of both players are equa
 and you should also return true. You may assume that both players are playing optimally.
 
 """
+import collections
 
 
-from collections import deque
-
-
-def PredictTheWinner(nums) -> bool:
-    deq = deque(nums)
-    pl1 = 0 # set player 1 score to zero initially
-    pl2 = 0 # set player 2 score to zero initially
-    turn = True # Used to track turns True means player 1's turn False means player 2's turn
-    while deq:
-        l = deq[0]
-        r = deq[-1]
-        if turn:
-            if l >= r:
-                pl1 += deq.popleft()
-            else: 
-                pl1 += deq.pop()
-        else:
-            if l >= r:
-                pl2 += deq.popleft()
-            else: 
-                pl2 += deq.pop()
-                
-        turn = not turn
-
-    return True if pl1 >= pl2 else False
+class Solution:
+    def PredictTheWinnerRec(self, nums) -> bool:
+        n = len(nums)
+        
+        def maxDiff(left, right):
+            if left == right:
+                return nums[left]
+            score_by_left = nums[left] - maxDiff(left + 1, right)
+            score_by_right = nums[right] - maxDiff(left, right - 1)
+            return max(score_by_left, score_by_right)
+        
+        return maxDiff(0, n - 1) >= 0
     
-PredictTheWinner([1,5,233,7])
+
+
+def PredictTheWinnerMemo(nums) -> bool:
+    n = len(nums)
+    memo = collections.defaultdict(int)
+    
+    def maxDiff(left, right):
+        if (left, right) in memo:
+            return memo[(left, right)]
+        if left == right:
+            return nums[left]
+        score_by_left = nums[left] - maxDiff(left + 1, right)
+        score_by_right = nums[right] - maxDiff(left, right - 1)
+        
+        memo[(left, right)] = max(score_by_left, score_by_right)
+        return memo[(left, right)]
+    
+    return maxDiff(0, n - 1) >= 0
