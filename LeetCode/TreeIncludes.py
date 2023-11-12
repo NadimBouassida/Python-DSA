@@ -23,24 +23,26 @@ b.left = d
 b.right = e
 c.right = f
 
-# def treeIncludesIterative(root, target):
-#     if root == None:
-#         return False
-#     queue = [root]
+# Using Iterative approach
+def treeIncludesIterative(root, target):
+    if root == None:
+        return False
+    queue = [root]
 
-#     while (len(queue) > 0):
-#         current = queue.pop(0)
-#         if current.val == target:
-#             return True
-#         if current.left:
-#             queue.append(current.left)
-#         if current.right:
-#             queue.append(current.right)
-#     return False
+    while (len(queue) > 0):
+        current = queue.pop(0)
+        if current.val == target:
+            return True
+        if current.left:
+            queue.append(current.left)
+        if current.right:
+            queue.append(current.right)
+    return False
 
-# print(treeIncludesIterative(a,'e'))
-# print(treeIncludesIterative(a,'j'))
+print(treeIncludesIterative(a,'e'))
+print(treeIncludesIterative(a,'j'))
 
+# Using Recurrsive approach
 def treeIncludesRecurrsive(root, target):
     if root == None:
         return False
