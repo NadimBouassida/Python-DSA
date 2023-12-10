@@ -14,6 +14,8 @@ Output: [[1,4],[2,5],[3,6]]
  
 """
 def transpose(matrix):
+
+    # Without List Comprehension:
     # r = len(matrix) # Number of rows in the Matrix
     # c = len(matrix[0]) # Length of each column in the Matrix
     # transpose = [[0 for i in range(r)] for j in range(c)]
@@ -22,6 +24,9 @@ def transpose(matrix):
     #         transpose[j][i] = matrix[i][j]
     
     # return transpose
+
+    # With List Comprehension:
+    
     rows_count = len(matrix)
     column_length = len(matrix[0])
     
