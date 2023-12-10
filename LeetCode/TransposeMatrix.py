@@ -14,9 +14,24 @@ Output: [[1,4],[2,5],[3,6]]
  
 """
 def transpose(matrix):
-        result = [matrix[j][i] for i in range(len(matrix)) for j in range(len(matrix[i]))]
-        return result
+    # r = len(matrix) # Number of rows in the Matrix
+    # c = len(matrix[0]) # Length of each column in the Matrix
+    # transpose = [[0 for i in range(r)] for j in range(c)]
+    # for i in range(r):
+    #     for j in range(c):
+    #         transpose[j][i] = matrix[i][j]
+    
+    # return transpose
+    rows_count = len(matrix)
+    column_length = len(matrix[0])
+    
+    result = [[matrix[i][j] for i in range(rows_count)] for j in range(column_length)] 
+    
+    return result
+
 
 test_cases = [[[1,2,3],[4,5,6],[7,8,9]],[[1,2,3],[4,5,6]]]
 for test in test_cases:
-        print(transpose(test))
+    print(transpose(test))
+        
+        
