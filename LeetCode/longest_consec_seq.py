@@ -1,28 +1,3 @@
-# import heapq as hq
-
-# def longest_consec_seq(arr):
-#     if len(arr) == 0:
-#         return 0
-#     if len(arr) == 1:
-#         return 1
-#     hq.heapify(arr)
-#     subs = []
-#     sub = [hq.heappop(arr)]
-#     while arr:
-#         root = hq.heappop(arr)
-#         if root - sub[-1] == 1:
-#             sub += [root]
-#         else:
-#             subs += [sub]
-#             if arr:
-#                 sub = [hq.heappop(arr)]
-#             else:
-#                 break
-                
-#     return len(max(subs,key=len))
-
-
-
 def longest_consec_seq(nums):
     num_set = set(nums)
     longest_streak = 0
