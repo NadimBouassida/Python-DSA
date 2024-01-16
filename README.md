@@ -1,2 +1,2 @@
 # Python-DSA
-Learning data structures and alogorithms with python 
+data structures and alogorithms using python 
