@@ -1,3 +1,7 @@
+"""
+1457. Pseudo-Palindromic Paths in a Binary Tree
+"""
+
 from binary_tree_helper import TreeNode, to_binary_tree
 from typing import Optional
 
@@ -5,7 +9,7 @@ from typing import Optional
 class Solution:
     def pseudoPalindromicPaths (self, root: Optional[TreeNode]) -> int:
 
-        path = set([root.val])
+        path = set()
         
         return self.isPalindrom(root, path)
 
