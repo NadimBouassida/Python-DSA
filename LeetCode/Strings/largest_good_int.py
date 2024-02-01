@@ -2,7 +2,7 @@
 2264. Largest 3-Same-Digit Number in String
 """
 
-def largestGoodInteger(num: str) -> str:
+def largest_good_int(num: str) -> str:
     curr = num[0]
     rep = 1
     sub = ''
@@ -20,4 +20,4 @@ def largestGoodInteger(num: str) -> str:
 
 tests = ["222","6777133339","2300019","42352338"]
 for test in tests:
-    print(largestGoodInteger(test))
+    print(largest_good_int(test))

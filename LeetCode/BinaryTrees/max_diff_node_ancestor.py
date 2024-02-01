@@ -1,12 +1,12 @@
 """
 1026. Maximum Difference Between Node and Ancestor
 """
-from binary_tree_helper import TreeNode, to_binary_tree
+from DataStructures.binary_tree import TreeNode, to_binary_tree
 from typing import Optional
 
 
 class Solution:
-    def maxAncestorDiff(self, root: Optional[TreeNode]) -> int:
+    def max_ancestor_diff(self, root: Optional[TreeNode]) -> int:
         l_set = set()
         r_set = set()
         stack = [root]
@@ -38,4 +38,4 @@ class Solution:
 root = to_binary_tree([8,3,10,1,6,None,14,None,None,4,7,13])
 
 sol = Solution()
-print(sol.maxAncestorDiff(root))
+print(sol.max_ancestor_diff(root))

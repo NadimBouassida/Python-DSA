@@ -27,9 +27,6 @@ class LinkedList(object):
             self.head = new_element
             
     def get_position(self, position):
-        """Get an element from a particular position.
-        Assume the first position is "1".
-        Return "None" if position is not in the list."""
         current = self.head
         if self.head:
             while position > 1:
@@ -39,10 +36,6 @@ class LinkedList(object):
         return current
     
     def insert(self, new_element, position):
-        """Insert a new node at the given position.
-        Assume the first position is "1".
-        Inserting at position 3 means between
-        the 2nd and 3rd elements."""
         current = self.head
         while position > 2:
             if current.next:

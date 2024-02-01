@@ -2,21 +2,21 @@
 1457. Pseudo-Palindromic Paths in a Binary Tree
 """
 
-from binary_tree_helper import TreeNode, to_binary_tree
+from DataStructures.binary_tree import TreeNode, to_binary_tree
 from typing import Optional
 
 
 class Solution:
-    def pseudoPalindromicPaths (self, root: Optional[TreeNode]) -> int:
+    def pseudo_palindromic_paths (self, root: Optional[TreeNode]) -> int:
 
         path = set()
         
-        return self.isPalindrom(root, path)
+        return self.is_palindrom(root, path)
 
         
 
 
-    def isPalindrom(self, node, path):
+    def is_palindrom(self, node, path):
         if not node:
             return 0
 
@@ -32,10 +32,10 @@ class Solution:
             path.add(node.val)
 
         
-        return self.isPalindrom(node.left,path) + self.isPalindrom(node.right,path)
+        return self.is_palindrom(node.left,path) + self.is_palindrom(node.right,path)
 
 root = to_binary_tree([8,8,None,7,7,None,None,2,4,None,8,None,7,None,1])
 
 s = Solution()
 
-print(s.pseudoPalindromicPaths(root))
+print(s.pseudo_palindromic_paths(root))
