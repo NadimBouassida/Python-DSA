@@ -3,7 +3,7 @@
 """
 from typing import List
 
-# Coulnd find a solution but found one on a video from Neetcode youtube channel
+# Couldn't find a solution but found one on a video from Neetcode youtube channel
 # Link: https://www.youtube.com/watch?v=pfiQ_PS1g8E
 class Solution:
     def exist(self, board: List[List[str]], word: str) -> bool:

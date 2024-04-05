@@ -7,7 +7,6 @@
     Therefore, the iterative approach with a queue is generally preferred for its efficiency and simplicity.
 """
 from DataStructures.binary_tree import to_binary_tree
-from typing import Optional
 from collections import deque
 
 def breadth_first_travers(root):
