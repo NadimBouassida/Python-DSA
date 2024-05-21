@@ -6,7 +6,7 @@ from typing import List
 class Solution:
     def subsetXORSum(self, nums: List[int]) -> int:
         dp = [0]
-        for i in reversed(range(len(nums))):
+        for i in range(len(nums)):
             for num in dp.copy():
                 dp.append(num ^ nums[i])
         return sum(dp)
